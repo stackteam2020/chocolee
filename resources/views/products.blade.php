@@ -79,7 +79,7 @@
             </div>
 
 @section('scripts')
-<script src="{{ asset('js/cart.js') }}" defer></script>
+<script src="{{ asset('js/addToCart.js') }}" defer></script>
 @endsection  
    
 @endsection

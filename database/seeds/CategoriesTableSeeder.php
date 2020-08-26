@@ -26,11 +26,5 @@ class CategoriesTableSeeder extends Seeder
         $category3->name = 'category three';
         $category3->save();
 
-
-        $user = new User;
-        $user->name = 'Ahmed';
-        $user->email = 'ahmed@example.com';
-        $user->password = Hash::make('a');
-        $user->save();
     }
 }

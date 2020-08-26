@@ -20,8 +20,10 @@ class CreateProductsTable extends Migration
             $table->float('price');
             $table->integer('quantity');
             $table->text('image');
+            $table->unSignedBigInteger('category_id');
             $table->timestamps();
 
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 

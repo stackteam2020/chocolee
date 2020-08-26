@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Model\Order;
 use App\Model\Product;
+use App\Model\Category;
 use App\Model\OrderDetails;
 use Illuminate\Http\Request;
 
@@ -27,7 +28,31 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $categories = Category::take(3)->get();
+        return view('welcome', compact('categories'));
+    }
+
+    public function products()
+    {
+        $products = Product::paginate(12);
+        $categories = Category::all();
+        return view('front.products', compact('products', 'categories'));
+    }
+
+    public function filter_products($category_id)
+    {
+        $filtered_products = Product::where('category_id', $category_id)->paginate(12); 
+        return $filtered_products;
+    }
+
+    public function about()
+    {
+        return view('front.about');
+    }
+
+    public function contact()
+    {
+        return view('front.contactus');
     }
 
     public function store()

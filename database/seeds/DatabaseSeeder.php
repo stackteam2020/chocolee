@@ -13,6 +13,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(CategoriesTableSeeder::class);
-        // factory(Product::class, 50)->Create();
+        factory(Product::class, 50)->Create();
     }
 }
