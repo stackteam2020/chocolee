@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="author" content="">
     <meta name="keywords" content="">
     <meta name="description" content="">
@@ -92,7 +93,7 @@
               </div>
               <div class="ps-cart__footer">
                 <h3>Sub Total:<strong id="total-cart">$0.00</strong></h3>
-                <figure><a class="ps-btn" href="shopping-cart.html">View Cart</a><a class="ps-btn ps-btn--dark" href="checkout.html">Checkout</a></figure>
+                <figure class="cart-figure"><a class="ps-btn" href="{{ route('cart') }}">View Cart</a></figure>
               </div>
             </div>
           </div>
@@ -120,7 +121,7 @@
             </div>
             <div class="ps-cart__footer">
               <h3>Sub Total:<strong id="total-cart">$0.00</strong></h3>
-              <figure><a class="ps-btn" href="shopping-cart.html">View Cart</a><a class="ps-btn ps-btn--dark" href="checkout.html">Checkout</a></figure>
+              <figure><a class="ps-btn" href="{{ route('cart') }}">View Cart</a><a class="ps-btn ps-btn--dark" href="checkout.html">Checkout</a></figure>
             </div>
           </div>
         </div>
@@ -306,6 +307,5 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxflHHc5FlDVI-J71pO7hM1QJNW1dRp4U&amp;region=GB"></script>
     @yield('scripts')
   </body>
-
 <!--  29:51-->
 </html>

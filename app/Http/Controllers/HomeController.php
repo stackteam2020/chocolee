@@ -55,6 +55,11 @@ class HomeController extends Controller
         return view('front.contactus');
     }
 
+    public function cart()
+    {
+        return view('front.checkout');
+    }
+
     public function store()
     {
         $products = Product::all();
@@ -65,9 +70,9 @@ class HomeController extends Controller
     {
         $order_products = json_decode($request->cart);
         $new_order = new Order;
-        $new_order->user_name = $request->user_name;
-        $new_order->user_phone = $request->user_phone;
-        $new_order->user_address = $request->user_address;
+        $new_order->user_name = $request->name;
+        $new_order->user_phone = $request->phone;
+        $new_order->user_address = $request->address;
         $new_order->flag = 'cash on delivery';
         $new_order->status = 'pending';
         $new_order->save();

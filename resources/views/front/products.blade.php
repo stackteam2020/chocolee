@@ -55,7 +55,11 @@
                         <p>{{$product->category->name}}</p><span class="ps-product__price">${{$product->price}}</span>
                       </div>
                       <div class="ps-product__shopping"><a class="ps-btn ps-product__add-to-cart" href="#">Add to cart</a>
-                        <div class="ps-product__actions"><a href="#"><i class="fa fa-heart-o"></i></a><a href="#"><i class="fa fa-random"></i></a></div>
+                        <div class="ps-product__actions">
+                          <div class="form-group--inside">
+                            <input type="number" class="form-control quantity-input" min=1 value=1>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
